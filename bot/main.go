@@ -1,8 +1,8 @@
 package bot
 
 import (
-	"fmt"
 	"os"
+	s "strings"
 
 	gbl "github.com/calebhiebert/gobbl"
 	fb "github.com/calebhiebert/gobbl/messenger"
@@ -37,19 +37,21 @@ func Setup() (*gbl.Bot, *fb.MessengerIntegration, error) {
 	gobblr.Use(intentRouter.Middleware())
 
 	// Route setup
+	// Response to GETTING_STARTED button payload
 	textRouter.Text(TCGetStarted, getStarted)
 
-	// Custom simple echo middleware
+	// Response to several variants of greeting
 	gobblr.Use(func(c *gbl.Context) {
-		// Create response object in context object
-		r := fb.CreateResponse(c)
-
-		// Add text response
-		fmt.Printf("c.User.FirstName %s\n", c.User.FirstName)
-		fmt.Printf("c.User %s\n", c.User)
-		fmt.Printf("User said: %s\n", c.Request.Text)
-		r.Text(fmt.Sprintf(say("greeting"), say("botName")))
+		userSaid := s.ToLower(c.Request.Text)
+		if contains(OCGreetings, userSaid) {
+			getStarted(c)
+		}
 	})
+
+	// Response to IMAGE_RECEIVED payload
+	textRouter.Text(TCImageReceived, provideText)
+
+	textRouter.Text(TCReplaceImage, replaceImage)
 
 	// FACEBOOK MESSENGER SETUP
 	mapi := fb.CreateMessengerAPI(os.Getenv("PAGE_ACCESS_TOKEN"))

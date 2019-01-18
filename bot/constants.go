@@ -10,3 +10,12 @@ var CPromptedText = "TEXT_PROMPT_FOLLOWUP"
 // TEXT CONSTANTS
 // TCGetStarted will show the user the welcome message
 var TCGetStarted = "GET_STARTED"
+
+// TCReplaceImage will prompt user to send an image
+var TCReplaceImage = "REPLACE_IMAGE"
+
+// TCImageReceived, temp
+var TCImageReceived = "IMAGE_RECEIVED"
+
+// OTHER CONSTANTS
+var OCGreetings = []string{"hello", "hi", "hey", "aloha", "greetings", "good day", "good morning", "good evening"}
