@@ -5,6 +5,7 @@ import (
 	s "strings"
 
 	gbl "github.com/calebhiebert/gobbl"
+	bctx "github.com/calebhiebert/gobbl/context"
 	fb "github.com/calebhiebert/gobbl/messenger"
 )
 
@@ -28,19 +29,22 @@ func Setup() (*gbl.Bot, *fb.MessengerIntegration, error) {
 
 	// Router setup
 	textRouter := gbl.TextRouter()
-	intentRouter := gbl.IntentRouter()
-	customRouter := gbl.CustomRouter()
+	ictxRouter := bctx.ContextIntentRouter()
+	//intentRouter := gbl.IntentRouter()
+	//customRouter := gbl.CustomRouter()
 
 	// Adding router middleware to the bot
 	gobblr.Use(textRouter.Middleware())
-	gobblr.Use(customRouter.Middleware())
-	gobblr.Use(intentRouter.Middleware())
+	gobblr.Use(ictxRouter.Middleware())
+	//gobblr.Use(customRouter.Middleware())
+	//gobblr.Use(intentRouter.Middleware())
 
-	// Route setup
+	// Routes setup
+	// We'll be using Flags to store dialog state at the moment >> store to DB
 	// Response to GETTING_STARTED button payload
 	textRouter.Text(TCGetStarted, getStarted)
 
-	// Response to several variants of greeting
+	// Response to greeting and restarting messages
 	gobblr.Use(func(c *gbl.Context) {
 		userSaid := s.ToLower(c.Request.Text)
 		if contains(OCGreetings, userSaid) {
@@ -48,10 +52,17 @@ func Setup() (*gbl.Bot, *fb.MessengerIntegration, error) {
 		}
 	})
 
-	// Response to IMAGE_RECEIVED payload
+	// Response to IMAGE_RECEIVED payload, temp
 	textRouter.Text(TCImageReceived, provideText)
 
+	// Response to REPLACE_IMAGE payload
 	textRouter.Text(TCReplaceImage, replaceImage)
+
+	// Default fallback response
+	//gobblr.Use(defaultFallback)
+
+	// Displays value in "botState" flag, temp
+	textRouter.Text(TCShowFlag, showFlag)
 
 	// FACEBOOK MESSENGER SETUP
 	mapi := fb.CreateMessengerAPI(os.Getenv("PAGE_ACCESS_TOKEN"))

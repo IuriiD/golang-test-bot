@@ -1,5 +1,9 @@
+github.com/avast/retry-go v2.1.0+incompatible h1:NDQfwOYTuYSbKEwFu+dx5YiU3jANx9n4NW2ZCzYL3AI=
+github.com/avast/retry-go v2.1.0+incompatible/go.mod h1:XtSnn+n/sHqQIpZ10K1qAevBhOOCWBLXXy3hyiqqBrY=
 github.com/calebhiebert/gobbl v0.0.0-20181218202331-c32483b7f14a h1:8UOK8kQpPyvGeSyjgcvxawK/S8rJViN9QxWJk7qZQ0U=
 github.com/calebhiebert/gobbl v0.0.0-20181218202331-c32483b7f14a/go.mod h1:7w6declyqnpHo+uvBR0bzWQDNK0E43yhi9EHm7Is44U=
+github.com/calebhiebert/gobbl/context v0.0.0-20181218202331-c32483b7f14a h1:7J8+5L9WSEJgqNR/342gwrmJibUNM33XTzAFekaHH5g=
+github.com/calebhiebert/gobbl/context v0.0.0-20181218202331-c32483b7f14a/go.mod h1:4z5QQTEjnzMhi4XzKLDWy+Z99Etz0ze9VfmZINAr7k4=
 github.com/calebhiebert/gobbl/messenger v0.0.0-20181218202331-c32483b7f14a h1:+hjDAecV2fL4xkMtHYveuHeTA9EWiWD3WZHeaqScdPY=
 github.com/calebhiebert/gobbl/messenger v0.0.0-20181218202331-c32483b7f14a/go.mod h1:93S1yG7Rnqm/VU5ZcKk+JsNZw5AY8qwgCJDkYNgVlo8=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
@@ -14,6 +18,8 @@ github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
 github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/json-iterator/go v1.1.5 h1:gL2yXlmiIo4+t+y32d4WGwOjKGYcGOuyrg46vadswDE=
 github.com/json-iterator/go v1.1.5/go.mod h1:+SdeFBvtyEkXs7REEP0seUULqWtbJapLOCVDaaPEHmU=
+github.com/lib/pq v1.0.0 h1:X5PMW56eZitiTeO7tKzZxFCSpbFZJtkMMooicw2us9A=
+github.com/lib/pq v1.0.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
 github.com/logrusorgru/aurora v0.0.0-20181002194514-a7b3b318ed4e h1:9MlwzLdW7QSDrhDjFlsEYmxpFyIoXmYRon3dt0io31k=
 github.com/logrusorgru/aurora v0.0.0-20181002194514-a7b3b318ed4e/go.mod h1:7rIyQOR62GCctdiQpZ/zOJlFyk6y+94wXzv6RNZgaR4=
 github.com/matoous/go-nanoid v0.0.0-20181114085210-eab626deece6 h1:elv0VC5n2owefO3RvtKvS3i3/rw9LCrs0+tVFLbBlmQ=
@@ -45,3 +51,5 @@ gopkg.in/go-playground/validator.v8 v8.18.2 h1:lFB4DoMU6B626w8ny76MV7VX6W2VHct2G
 gopkg.in/go-playground/validator.v8 v8.18.2/go.mod h1:RX2a/7Ha8BgOhfk7j780h4/u/RRjR0eouCJSH80/M2Y=
 gopkg.in/yaml.v2 v2.2.2 h1:ZCJp+EgiOT7lHqUV2J862kp8Qj64Jo6az82+3Td9dZw=
 gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
+upper.io/db.v3 v3.5.7+incompatible h1:3MJSnJQ+NMxBxuNwO+gOKFiugwv+f61LbyuZYSPzoi4=
+upper.io/db.v3 v3.5.7+incompatible/go.mod h1:FgTdD24eBjJAbPKsQSiHUNgXjOR4Lub3u1UMHSIh82Y=
