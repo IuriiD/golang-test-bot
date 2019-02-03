@@ -5,7 +5,6 @@ import (
 	s "strings"
 
 	gbl "github.com/calebhiebert/gobbl"
-	bctx "github.com/calebhiebert/gobbl/context"
 	fb "github.com/calebhiebert/gobbl/messenger"
 )
 
@@ -29,13 +28,13 @@ func Setup() (*gbl.Bot, *fb.MessengerIntegration, error) {
 
 	// Router setup
 	textRouter := gbl.TextRouter()
-	ictxRouter := bctx.ContextIntentRouter()
+	//ictxRouter := bctx.ContextIntentRouter()
 	//intentRouter := gbl.IntentRouter()
 	//customRouter := gbl.CustomRouter()
 
 	// Adding router middleware to the bot
 	gobblr.Use(textRouter.Middleware())
-	gobblr.Use(ictxRouter.Middleware())
+	//gobblr.Use(ictxRouter.Middleware())
 	//gobblr.Use(customRouter.Middleware())
 	//gobblr.Use(intentRouter.Middleware())
 
